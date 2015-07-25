@@ -12,8 +12,6 @@
 		68890ECD1B4CD9A2002183BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68890ECB1B4CD9A2002183BE /* LaunchScreen.storyboard */; };
 		68890ED81B4CD9A2002183BE /* Status1_2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68890ED71B4CD9A2002183BE /* Status1_2Tests.swift */; };
 		68890EE31B4CD9A2002183BE /* Status1_2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68890EE21B4CD9A2002183BE /* Status1_2UITests.swift */; };
-		68890EF11B4CD9C4002183BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68890EF01B4CD9C4002183BE /* Main.storyboard */; };
-		68890EF31B4CD9DA002183BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68890EF21B4CD9DA002183BE /* ViewController.swift */; };
 		68890EF51B4E2462002183BE /* FakeAddressBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68890EF41B4E2462002183BE /* FakeAddressBook.swift */; };
 		68890EF71B4E255F002183BE /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68890EF61B4E255F002183BE /* CustomTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -47,8 +45,6 @@
 		68890EDE1B4CD9A2002183BE /* Status1.2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Status1.2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		68890EE21B4CD9A2002183BE /* Status1_2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status1_2UITests.swift; sourceTree = "<group>"; };
 		68890EE41B4CD9A2002183BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		68890EF01B4CD9C4002183BE /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../../Status1.1/Status1.1/Main.storyboard; sourceTree = "<group>"; };
-		68890EF21B4CD9DA002183BE /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../../Status1.1/Status1.1/ViewController.swift; sourceTree = "<group>"; };
 		68890EF41B4E2462002183BE /* FakeAddressBook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeAddressBook.swift; sourceTree = "<group>"; };
 		68890EF61B4E255F002183BE /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -104,8 +100,6 @@
 				68890EF41B4E2462002183BE /* FakeAddressBook.swift */,
 				68890EF61B4E255F002183BE /* CustomTableViewCell.swift */,
 				68890EC21B4CD9A2002183BE /* AppDelegate.swift */,
-				68890EF21B4CD9DA002183BE /* ViewController.swift */,
-				68890EF01B4CD9C4002183BE /* Main.storyboard */,
 				68890EC91B4CD9A2002183BE /* Assets.xcassets */,
 				68890ECB1B4CD9A2002183BE /* LaunchScreen.storyboard */,
 				68890ECE1B4CD9A2002183BE /* Info.plist */,
@@ -236,7 +230,6 @@
 			files = (
 				68890ECD1B4CD9A2002183BE /* LaunchScreen.storyboard in Resources */,
 				68890ECA1B4CD9A2002183BE /* Assets.xcassets in Resources */,
-				68890EF11B4CD9C4002183BE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,7 +255,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				68890EF51B4E2462002183BE /* FakeAddressBook.swift in Sources */,
-				68890EF31B4CD9DA002183BE /* ViewController.swift in Sources */,
 				68890EF71B4E255F002183BE /* CustomTableViewCell.swift in Sources */,
 				68890EC31B4CD9A2002183BE /* AppDelegate.swift in Sources */,
 			);
@@ -483,6 +475,7 @@
 				68890EE91B4CD9A2002183BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		68890EEA1B4CD9A2002183BE /* Build configuration list for PBXNativeTarget "Status1.2Tests" */ = {
 			isa = XCConfigurationList;
@@ -491,6 +484,7 @@
 				68890EEC1B4CD9A2002183BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		68890EED1B4CD9A2002183BE /* Build configuration list for PBXNativeTarget "Status1.2UITests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +493,7 @@
 				68890EEF1B4CD9A2002183BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

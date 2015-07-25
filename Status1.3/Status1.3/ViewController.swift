@@ -23,6 +23,7 @@ class ViewController: UIViewController, UITextFieldDelegate  {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         doingTextField.delegate = self;
+        statusSegmentControl.tintColor = UIColor.redColor();    // Start as busy
     }
     
     override func didReceiveMemoryWarning() {

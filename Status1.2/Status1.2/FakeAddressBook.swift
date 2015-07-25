@@ -29,22 +29,23 @@ class FakeAddressBook: UITableViewController {
         let cellIdentifier = "Cell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! CustomTableViewCell
         // Configure the cell...
-        if indexPath.row == 0{
+        if indexPath.row == 0 {
             cell.nameLabel.text = "You!"
             cell.thumbnailImageView.image = UIImage(named: "online.png")
             cell.typeLabel.text = mystatus[0]
         }
-        else{
-        cell.nameLabel.text = peopleNames[indexPath.row]
-        cell.thumbnailImageView.image = UIImage(named: peopleStatus[indexPath.row])
-        cell.typeLabel.text = ""
-        //cell.thumbnailImageView.layer.cornerRadius = cell.thumbnailImageView.frame.size.width / 2
-        //cell.thumbnailImageView.clipsToBounds = true
+        else {
+            cell.nameLabel.text = peopleNames[indexPath.row]
+            cell.thumbnailImageView.image = UIImage(named: peopleStatus[indexPath.row])
+            cell.typeLabel.text = ""
+            //cell.thumbnailImageView.layer.cornerRadius = cell.thumbnailImageView.frame.size.width / 2
+            //cell.thumbnailImageView.clipsToBounds = true
         }
-        return cell}
+        return cell
+    }
     
     
-     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         // Create an option menu as an action sheet
         let optionMenu = UIAlertController(title: nil, message: "What do you want to do?", preferredStyle: .ActionSheet)
         // Add actions to the menu
@@ -60,11 +61,6 @@ class FakeAddressBook: UITableViewController {
         let callAction = UIAlertAction(title: "Call " + "(605) 906-1978", style:
             UIAlertActionStyle.Default, handler: callActionHandler)
         optionMenu.addAction(callAction)
-        }
-    
-
-
-
-
+    }
 }
 
