@@ -16,8 +16,6 @@ class ViewController: UIViewController, UITextFieldDelegate  {
     
     @IBOutlet weak var doingTextField: UITextField!
     
-    @IBOutlet weak var postButton: UIButton!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,9 +40,6 @@ class ViewController: UIViewController, UITextFieldDelegate  {
         } else {
             assert(true, "control has > 2 segments");
         }
-    }
-    
-    @IBAction func postButton(sender: AnyObject) {
     }
     
     

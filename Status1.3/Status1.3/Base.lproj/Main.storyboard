@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="GOX-dR-8ba">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--My Status-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Status1_3" customModuleProvider="target" sceneMemberID="viewController">
@@ -22,7 +22,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="123" placeholderIntrinsicHeight="28" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="QaF-dR-4HB">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="123" placeholderIntrinsicHeight="28" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="QaF-dR-4HB">
                                 <rect key="frame" x="239" y="79" width="123" height="29"/>
                                 <segments>
                                     <segment title="Busy"/>
@@ -32,14 +32,7 @@
                                     <action selector="setStatus:" destination="vXZ-lx-hvc" eventType="valueChanged" id="yXH-FF-zXM"/>
                                 </connections>
                             </segmentedControl>
-                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="32" placeholderIntrinsicHeight="30" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w7y-Ze-lJ0">
-                                <rect key="frame" x="284" y="237" width="32" height="30"/>
-                                <state key="normal" title="Post"/>
-                                <connections>
-                                    <action selector="postButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="P0R-Zj-Bm4"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="418" placeholderIntrinsicHeight="30" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="(Optional) What are you doing?" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="i4h-Gj-Uc1">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="418" placeholderIntrinsicHeight="30" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="(Optional) What are you doing?" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="i4h-Gj-Uc1">
                                 <rect key="frame" x="91" y="157" width="418" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
@@ -47,8 +40,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="w7y-Ze-lJ0" firstAttribute="top" secondItem="i4h-Gj-Uc1" secondAttribute="bottom" constant="50" id="4xz-uP-77p"/>
-                            <constraint firstItem="i4h-Gj-Uc1" firstAttribute="centerX" secondItem="w7y-Ze-lJ0" secondAttribute="centerX" id="Dfz-PF-usX"/>
                             <constraint firstItem="QaF-dR-4HB" firstAttribute="leading" secondItem="PC6-fZ-Lrz" secondAttribute="trailing" constant="41" id="KzM-pi-oeD"/>
                             <constraint firstItem="QaF-dR-4HB" firstAttribute="centerX" secondItem="i4h-Gj-Uc1" secondAttribute="centerX" id="M7v-oG-bdw"/>
                             <constraint firstItem="i4h-Gj-Uc1" firstAttribute="top" secondItem="QaF-dR-4HB" secondAttribute="bottom" constant="50" id="awG-yy-1jx"/>
@@ -58,14 +49,65 @@
                             <constraint firstItem="PC6-fZ-Lrz" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="66" id="wAl-wU-F6s"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="My Status" id="XRt-1u-0Oa">
+                        <barButtonItem key="rightBarButtonItem" title="Post" id="bMf-Ki-Qnh">
+                            <connections>
+                                <segue destination="5n7-y2-BZa" kind="show" id="ltB-l8-dwU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="doingTextField" destination="i4h-Gj-Uc1" id="eyJ-KT-QmF"/>
-                        <outlet property="postButton" destination="w7y-Ze-lJ0" id="N8m-Bp-F0p"/>
                         <outlet property="statusSegmentControl" destination="QaF-dR-4HB" id="5cG-66-9UV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1384" y="517"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="c4k-bl-7Ym">
+            <objects>
+                <tableViewController id="5n7-y2-BZa" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="qil-Li-1VL">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="QQn-cl-EpH">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QQn-cl-EpH" id="fzb-DD-5kE">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="5n7-y2-BZa" id="n7x-9g-xnl"/>
+                            <outlet property="delegate" destination="5n7-y2-BZa" id="Do3-X3-6I2"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Awj-ZD-Na9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2072" y="517"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="pfk-Lo-Nxh">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GOX-dR-8ba" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="LmP-3S-h5t">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="qh2-Yz-3b6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gpb-4h-iMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="727" y="1178"/>
         </scene>
     </scenes>
 </document>
