@@ -15,6 +15,7 @@ class FriendTableViewController: UITableViewController {
     var friends: AllFriends = AllFriends()
     
     func loadSampleFriends() {
+        if friends.count() == 0 {
         var cohort = Cohort(title: "Family")
         cohort.addFriend(Friend(name: "Dad", status: .Busy, whatsDoing: "coding, what else?", isOnline: true))
         cohort.addFriend(Friend(name: "Mom", status: .Free, whatsDoing: "blogging"))
@@ -31,6 +32,7 @@ class FriendTableViewController: UITableViewController {
         cohort.addFriend(Friend(name: "SF friend 4"))
         cohort.addFriend(Friend(name: "SF friend 5"))
         friends.addCohort(cohort)
+        }
     }
     //
     // End Dummy DB
@@ -39,17 +41,20 @@ class FriendTableViewController: UITableViewController {
     
     // MARK: Properties
     let reuseID = "friendID"
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        loadSampleFriends()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        loadSampleFriends()
+        // Use the edit button item provided by the table view controller.
+       // navigationItem.leftBarButtonItem = editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
@@ -78,7 +83,7 @@ class FriendTableViewController: UITableViewController {
         var cell = tableView.dequeueReusableCellWithIdentifier(reuseID, forIndexPath: indexPath) as! UITableViewCell
         
         // Configure the cell...
-        let friend = friends.getCohort(indexPath.section).getFriends(indexPath.row)
+        let friend = friends.getCohort(indexPath.section).getFriend(indexPath.row)
         cell.textLabel?.text = friend.name
         cell.detailTextLabel?.text = friend.whatsDoing
         if friend.isOnline {
@@ -97,24 +102,28 @@ class FriendTableViewController: UITableViewController {
     }
     */
 
-    /*
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             // Delete the row from the data source
+            friends.getCohort(indexPath.section).dropFriend(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+            var newFriend = Friend(name: "new friend")
+            friends.getCohort(indexPath.section).addFriend(newFriend)
         }    
     }
-    */
 
-    /*
     // Override to support rearranging the table view.
     override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
+        // Remove from old location
+        var oldCohort = friends.getCohort(fromIndexPath.section)
+        var friend = oldCohort.dropFriend(fromIndexPath.row)
 
+        // Add to new location
+        friends.getCohort(toIndexPath.section).addFriend(friend, index: toIndexPath.row)
     }
-    */
 
     /*
     // Override to support conditional rearranging of the table view.

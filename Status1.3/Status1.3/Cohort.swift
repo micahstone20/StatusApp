@@ -20,7 +20,7 @@ class Cohort {
         friends = [Friend]();
     }
     
-    func getFriends(i: Int) -> Friend {
+    func getFriend(i: Int) -> Friend {
         return friends[i]
     }
     
@@ -40,14 +40,16 @@ class Cohort {
         return false
     }
     
-    func dropFriend(friend: Friend) -> Bool {
-        for i in 0..<friends.count {
-            if friends[i] == friend {
-                friends.removeAtIndex(i)
-                return true
-            }
+    func addFriend(friend: Friend, index: Int) -> Bool {
+        if !contains(friends, friend) {
+            friends.insert(friend, atIndex: index)
+            return true
         }
         return false
+    }
+    
+    func dropFriend(index: Int) -> Friend {
+        return friends.removeAtIndex(index)
     }
 }
 
